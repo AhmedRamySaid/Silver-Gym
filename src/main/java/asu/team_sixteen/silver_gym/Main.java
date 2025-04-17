@@ -12,9 +12,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        System.out.println(System.getProperty("javafx.version"));
         primaryStage = stage;
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Login.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("scenes/main.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
 
         stage.setTitle("Silver Gym");
