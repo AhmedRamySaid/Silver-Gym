@@ -18,12 +18,12 @@
             </HBox>
             <HBox alignment="CENTER">
                <children>
-                  <TextField fx:id="password_field" promptText="Password" />
+                  <PasswordField fx:id="password_field" promptText="Password" />
                </children>
             </HBox>
             <HBox alignment="CENTER">
                <children>
-                  <TextField fx:id="confirm_password_field" promptText="Confirm password" />
+                  <PasswordField fx:id="confirm_password_field" promptText="Confirm password" />
                </children>
             </HBox>
             <HBox alignment="CENTER">

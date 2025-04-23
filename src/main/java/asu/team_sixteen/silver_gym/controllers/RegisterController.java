@@ -5,7 +5,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
@@ -18,9 +20,9 @@ public class RegisterController implements Initializable {
     @FXML
     private TextField last_name_field;
     @FXML
-    private TextField password_field;
+    private PasswordField password_field;
     @FXML
-    private TextField confirm_password_field;
+    private PasswordField confirm_password_field;
     @FXML
     private TextField phone_number_field;
     @FXML
@@ -55,13 +57,45 @@ public class RegisterController implements Initializable {
             // Checks if the input is not a number
             if(!newValue.matches("\\d*")){
                 // Removes all non-number characters
-                phone_number_field.setText(newValue.replaceAll("[^\\d]", ""));
+                phone_number_field.setText(newValue.replaceAll("\\D", ""));
             }
         });
     }
 
     @FXML
     protected void onRegisterButtonClicked() throws IOException {
+        if (first_name_field.getText().isEmpty() || last_name_field.getText().isEmpty() ||
+                password_field.getText().isEmpty() || confirm_password_field.getText().isEmpty() ||
+                phone_number_field.getText().isEmpty()) {
+            Alert emptyFieldAlert = new Alert(Alert.AlertType.WARNING, "Please do not leave any of the fields empty");
+            emptyFieldAlert.showAndWait();
+            return;
+        }
+
+        if (first_name_field.getText().indexOf(' ') != -1 || last_name_field.getText().indexOf(' ') != -1) {
+            Alert emptyFieldAlert = new Alert(Alert.AlertType.WARNING, "Names cannot contain spaces");
+            emptyFieldAlert.showAndWait();
+            return;
+        }
+
+        if (password_field.getText().length() < 8){
+            Alert emptyFieldAlert = new Alert(Alert.AlertType.WARNING, "Password must be at least 8 characters long");
+            emptyFieldAlert.showAndWait();
+            return;
+        }
+
+        if (!password_field.getText().equals(confirm_password_field.getText())){
+            Alert emptyFieldAlert = new Alert(Alert.AlertType.WARNING, "The passwords must match");
+            emptyFieldAlert.showAndWait();
+            return;
+        }
+
+        if (!isValidPhoneNumber(phone_number_field.getText())) {
+            Alert emptyFieldAlert = new Alert(Alert.AlertType.WARNING, "Invalid phone number");
+            emptyFieldAlert.showAndWait();
+            return;
+        }
+
         //todo
     }
 
@@ -70,5 +104,15 @@ public class RegisterController implements Initializable {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("scenes/main.fxml"));
         Parent node = fxmlLoader.load();
         Main.primaryStage.getScene().setRoot(node);
+    }
+
+    private static boolean isValidPhoneNumber(String phoneNumber) {
+        /*
+        returns true if:
+            1) Phone numbers starts with 01 (as all regular egyptian phone numbers do)
+            2) The next digit is 0/1/2/5 (for the 4 mobile phone carriers in egypt)
+            3) has exactly 8 more digits
+         */
+        return phoneNumber.matches("^01[0125][0-9]{8}$");
     }
 }
