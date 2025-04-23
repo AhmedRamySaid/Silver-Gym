@@ -13,17 +13,17 @@ import java.util.ResourceBundle;
 
 public class MainPageController implements Initializable {
     @FXML
-    Button loginButton;
+    Button login_button;
     @FXML
-    Button signupButton;
+    Button signup_button;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        loginButton.prefWidthProperty().bind(Main.primaryStage.widthProperty().divide(5));
-        loginButton.prefHeightProperty().bind(Main.primaryStage.heightProperty().divide(10));
+        login_button.prefWidthProperty().bind(Main.primaryStage.widthProperty().divide(5));
+        login_button.prefHeightProperty().bind(Main.primaryStage.heightProperty().divide(10));
 
-        signupButton.prefWidthProperty().bind(Main.primaryStage.widthProperty().divide(5));
-        signupButton.prefHeightProperty().bind(Main.primaryStage.heightProperty().divide(10));
+        signup_button.prefWidthProperty().bind(Main.primaryStage.widthProperty().divide(5));
+        signup_button.prefHeightProperty().bind(Main.primaryStage.heightProperty().divide(10));
     }
 
     @FXML

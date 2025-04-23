@@ -9,23 +9,23 @@
          <children>
             <HBox alignment="CENTER">
                <children>
-                  <TextField promptText="username" />
+                  <TextField fx:id="customer_ID_field" promptText="Customer ID" />
                </children>
             </HBox>
             <HBox alignment="CENTER" layoutX="10.0" layoutY="76.0">
                <children>
-                  <PasswordField promptText="password" />
+                  <PasswordField fx:id="password_field" promptText="password" />
                </children>
             </HBox>
             <HBox alignment="CENTER">
                <children>
-                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onLoginButtonClicked" prefHeight="28.0" prefWidth="58.0" text="Login" />
+                  <Button fx:id="login_button" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onLoginButtonClicked" prefHeight="28.0" prefWidth="58.0" text="Login" />
                </children>
             </HBox>
          </children>
       </VBox>
    </center>
    <top>
-      <Button mnemonicParsing="false" onAction="#onBackButtonClicked" text="Back" BorderPane.alignment="TOP_LEFT" />
+      <Button fx:id="back_button" mnemonicParsing="false" onAction="#onBackButtonClicked" text="Back" BorderPane.alignment="TOP_LEFT" />
    </top>
 </BorderPane>

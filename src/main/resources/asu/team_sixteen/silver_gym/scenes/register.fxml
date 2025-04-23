@@ -5,33 +5,33 @@
 
 <BorderPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="asu.team_sixteen.silver_gym.controllers.RegisterController">
    <top>
-      <Button mnemonicParsing="false" onAction="#onBackButtonClicked" text="Back" BorderPane.alignment="TOP_LEFT" />
+      <Button fx:id="back_button" mnemonicParsing="false" onAction="#onBackButtonClicked" text="Back" BorderPane.alignment="TOP_LEFT" />
    </top>
    <center>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox alignment="CENTER" prefHeight="25.0" prefWidth="146.0" VBox.vgrow="NEVER">
+            <HBox alignment="CENTER">
                <children>
-                  <TextField prefHeight="25.0" prefWidth="75.0" promptText="First name" />
-                  <TextField prefHeight="25.0" prefWidth="75.0" promptText="Last name" />
+                  <TextField fx:id="first_name_field" promptText="First name" />
+                  <TextField fx:id="last_name_field" promptText="Last name" />
                </children>
             </HBox>
             <HBox alignment="CENTER">
                <children>
-                  <TextField promptText="Password" />
+                  <TextField fx:id="password_field" promptText="Password" />
                </children>
             </HBox>
             <HBox alignment="CENTER">
                <children>
-                  <TextField promptText="Repeat password" />
+                  <TextField fx:id="confirm_password_field" promptText="Confirm password" />
                </children>
             </HBox>
             <HBox alignment="CENTER">
                <children>
-                  <TextField fx:id="phone_number" promptText="Phone number" />
+                  <TextField fx:id="phone_number_field" promptText="Phone number" />
                </children>
             </HBox>
-            <Button mnemonicParsing="false" text="Register" />
+            <Button fx:id="register_button" mnemonicParsing="false" onAction="#onRegisterButtonClicked" text="Register" />
          </children></VBox>
    </center>
 </BorderPane>
