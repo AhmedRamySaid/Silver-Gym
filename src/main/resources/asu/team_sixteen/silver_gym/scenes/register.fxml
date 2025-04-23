@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="asu.team_sixteen.silver_gym.controllers.RegisterController">
+   <top>
+      <Button fx:id="back_button" mnemonicParsing="false" onAction="#onBackButtonClicked" text="Back" BorderPane.alignment="TOP_LEFT" />
+   </top>
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER">
+               <children>
+                  <TextField fx:id="first_name_field" promptText="First name" />
+                  <TextField fx:id="last_name_field" promptText="Last name" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER">
+               <children>
+                  <PasswordField fx:id="password_field" promptText="Password" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER">
+               <children>
+                  <PasswordField fx:id="confirm_password_field" promptText="Confirm password" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER">
+               <children>
+                  <TextField fx:id="phone_number_field" promptText="Phone number" />
+               </children>
+            </HBox>
+            <Button fx:id="register_button" mnemonicParsing="false" onAction="#onRegisterButtonClicked" text="Register" />
+         </children></VBox>
+   </center>
+</BorderPane>

@@ -3,26 +3,29 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<StackPane prefHeight="182.0" prefWidth="296.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="asu.team_sixteen.silver_gym.controllers.LoginController">
-   <children>
-      <VBox alignment="CENTER" prefHeight="91.0" prefWidth="244.0">
+<BorderPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="asu.team_sixteen.silver_gym.controllers.LoginController">
+   <center>
+      <VBox alignment="CENTER" prefHeight="91.0" prefWidth="244.0" spacing="10.0">
          <children>
             <HBox alignment="CENTER">
                <children>
-                  <TextField promptText="username" />
+                  <TextField fx:id="customer_ID_field" promptText="Customer ID" />
                </children>
             </HBox>
             <HBox alignment="CENTER" layoutX="10.0" layoutY="76.0">
                <children>
-                  <PasswordField promptText="password"/>
+                  <PasswordField fx:id="password_field" promptText="password" />
                </children>
             </HBox>
             <HBox alignment="CENTER">
                <children>
-                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="28.0" prefWidth="58.0" text="Login" />
+                  <Button fx:id="login_button" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onLoginButtonClicked" prefHeight="28.0" prefWidth="58.0" text="Login" />
                </children>
             </HBox>
          </children>
       </VBox>
-   </children>
-</StackPane>
+   </center>
+   <top>
+      <Button fx:id="back_button" mnemonicParsing="false" onAction="#onBackButtonClicked" text="Back" BorderPane.alignment="TOP_LEFT" />
+   </top>
+</BorderPane>
