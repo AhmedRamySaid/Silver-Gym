@@ -72,6 +72,7 @@ public class RegisterController implements Initializable {
             return;
         }
 
+		// Checks if the first name or last name contains spaces
         if (first_name_field.getText().indexOf(' ') != -1 || last_name_field.getText().indexOf(' ') != -1) {
             Alert emptyFieldAlert = new Alert(Alert.AlertType.WARNING, "Names cannot contain spaces");
             emptyFieldAlert.showAndWait();
